@@ -1,0 +1,17 @@
+{
+  "name": "smart-shopping-cart",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./server/app.js"
+ },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-router": "^0.0.1",
+    "mongodb": "^4.11.0",
+    "mongoose": "^6.6.7",
+    "nodemon": "^2.0.20",
+    "uuid": "^9.0.0"
+ }
+}
