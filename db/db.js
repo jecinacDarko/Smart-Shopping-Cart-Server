@@ -1,13 +1,12 @@
-require('dotenv').config({path:'../.env'});
+require('dotenv').config({ path: '../.env' });
+
 const mongoose = require('mongoose');
+
 const uri = process.env.API_KEY;
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 })
-  .then(() => console.log("Connected to DB"))
-  .catch(console.error)
-
- 
-  
+  .then(() => console.log('Connected to DB'))
+  .catch(console.error);

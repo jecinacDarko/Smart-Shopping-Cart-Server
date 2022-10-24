@@ -1,4 +1,5 @@
-const { MongoClient } = require("mongodb");
+const { MongoClient } = require('mongodb');
+
 const uri = process.env.API_KEY;
 const client = new MongoClient(uri);
 
@@ -10,9 +11,8 @@ async function run() {
     const projectsArray = await projects.toArray();
 
     console.log(projectsArray);
-
-  } finally {   
+  } finally {
     await client.close();
   }
 }
-run(); 
+run();

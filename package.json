@@ -2,8 +2,10 @@
   "name": "smart-shopping-cart",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon ./server/app.js"
- },
+    "start": "nodemon ./server/app.js",
+    "lint": "eslint ./server/app.js",
+    "lint-watch": "nodemon --exec 'npm run lint --silent'"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -13,5 +15,9 @@
     "mongoose": "^6.6.7",
     "nodemon": "^2.0.20",
     "uuid": "^9.0.0"
- }
+  },
+  "devDependencies": {
+    "eslint-config-salt": "^1.2.0",
+    "nodemon": "^2.0.20"
+  }
 }

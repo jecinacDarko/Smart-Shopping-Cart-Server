@@ -3,18 +3,20 @@ const express = require("express");
 const router = express.Router();
 const { v4: uuid } = require("uuid");
 
-
 // get one item
-router.get("/items/:uuid", async (req, res) => {
-    const item = await Item.findOne({ uuid: req.params.uuid });
-    res.send(item);
-    });
+router.get('items/:id', async (req, res) => {
+  const { id } = request.params;
+  console.log(request.params)
+  const item = await presidents.find(item => item.id === 1);
+  res.send(item);
+});
 
 // add one item
-router.post("/items/:uuid", async (req, res) => {
-    const item = await Item.create(req.body);
-    await item.save();
-    res.send(item); 
-  });
+app.post('/items/:id', (req, res) => {
+  const { item } = request.body;
+  const nextItemId = uuid(item);
+  const id = nextPresidentId.toString();
+  if (!from || !to || !name) return response.location('/api/presidents/').status(400).send();
+}
 
-module.exports = router;
+module.exports = router; 
