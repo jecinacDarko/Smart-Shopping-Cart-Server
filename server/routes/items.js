@@ -10,6 +10,12 @@ router.get('/:uuid', async (req, res) => {
   res.send(item);
 });
 
+// get all items
+router.get('/', async (req, res) => {
+  const items = await Item.find();
+  res.send(items);
+});
+
 // create one item
 router.post('/:id', async (req, res) => {
   const item = new Item({
