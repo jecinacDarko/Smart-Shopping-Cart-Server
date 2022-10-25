@@ -1,22 +1,22 @@
-const { Item } = require("../../db");
-const express = require("express");
-const router = express.Router();
-const { v4: uuid } = require("uuid");
+const { v4: uuid } = require('uuid');
+const express = require('express');
+const { Item } = require('../../db');
 
-// get one item
-router.get('items/:id', async (req, res) => {
-  const { id } = request.params;
-  console.log(request.params)
-  const item = await presidents.find(item => item.id === 1);
-  res.send(item);
+const router = express.Router();
+
+router.get('/', (req, res) => {
+  res.send('item list');
 });
 
-// add one item
-app.post('/items/:id', (req, res) => {
-  const { item } = request.body;
-  const nextItemId = uuid(item);
-  const id = nextPresidentId.toString();
-  if (!from || !to || !name) return response.location('/api/presidents/').status(400).send();
-}
+router.post('/:id', async (req, res) => {
+  const item = new Item({
+    id: uuid(),
+    name: req.body.name,
+    price: req.body.price,
+    stockStatus: req.body.stockStatus,
+  });
+  await item.save(item);
+  res.json(201, { item });
+});
 
-module.exports = router; 
+module.exports = router;

@@ -4,20 +4,20 @@ const { Schema } = mongoose;
 const { v4: uuid } = require('uuid');
 
 const ItemSchema = new Schema({
-  itemId: {
+  id: {
     type: String,
     default: uuid,
   },
-  itemName: {
+  name: {
     type: String,
     default: false,
     required: true,
   },
-  itemPrice: {
+  price: {
     type: String,
     required: true,
   },
-  itemInStock: {
+  stockStatus: {
     type: String,
     required: true,
   },
