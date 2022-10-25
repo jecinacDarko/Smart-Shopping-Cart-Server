@@ -4,10 +4,13 @@ const { Item } = require('../../db');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('item list');
+// get one item
+router.get('/:uuid', async (req, res) => {
+  const item = await Item.findOne({ id: req.params.uuid });
+  res.send(item);
 });
 
+// create one item
 router.post('/:id', async (req, res) => {
   const item = new Item({
     id: uuid(),
@@ -15,8 +18,8 @@ router.post('/:id', async (req, res) => {
     price: req.body.price,
     stockStatus: req.body.stockStatus,
   });
-  await item.save(item);
-  res.json(201, { item });
+  await item.save();
+  res.send(item);
 });
 
 module.exports = router;

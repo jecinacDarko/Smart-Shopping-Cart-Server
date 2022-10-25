@@ -23,6 +23,6 @@ const ItemSchema = new Schema({
   },
 });
 
-const Item = mongoose.model('smartCheckOutCollection', ItemSchema);
+const Item = mongoose.model('ItemCollection', ItemSchema);
 
 module.exports = Item;
