@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 
+const { ObjectID } = require('mongoose');
+
 const { Schema } = mongoose;
-// const { v4: uuid } = require('uuid');
 
 const ItemSchema = new Schema({
   id: {
-    type: Schema.Types.ObjectId,
-    required: true,
+    type: String,
+    default: ObjectID,
   },
   name: {
     type: String,
